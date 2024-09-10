@@ -18,7 +18,8 @@ export default function AutoCarousel ({children}: {children: React.ReactNode}) {
 		// Scroll every 3 seconds
 		const interval = setInterval(() => {
 			api.scrollNext()
-		}, 3000)
+		}, 4000)
+
 
 		return () => {
 			clearInterval(interval)
@@ -29,8 +30,8 @@ export default function AutoCarousel ({children}: {children: React.ReactNode}) {
 
 
 	return (
-		<Carousel className={"w-full h-full"} opts={{loop: true}} setApi={setApi}>
-			<CarouselContent className={"w-full h-full"}>
+		<Carousel className={"w-full h-full"} opts={{loop: true, align:'center'}} setApi={setApi}>
+			<CarouselContent className={"w-full h-full rounded-2xl p-4 px-8"}>
 				{items.map((item, i) => (
 					<CarouselItem className={"w-full h-full"} key={i}>
 						{item}

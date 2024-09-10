@@ -12,16 +12,18 @@ export default function Home() {
                 <span className={"font-bold text-slate-500"}> I'm a computer science student.</span>
             </h1>
 
-            <div className={"bg-slate-300 h-[28rem] w-full rounded-2xl p-2" }>
+            <div className={"bg-slate-300 h-[28rem] flex flex-row justify-center w-full rounded-2xl p-4" }>
                 <AutoCarousel>
-                    <div className={"w-full h-full bg-white"}>test</div>
-                    <div className={"w-full h-full bg-white"}>test</div>
+                    <div className={"w-full h-full bg-white rounded-2xl p-4"}>test</div>
+                    <div className={"w-full h-full bg-white rounded-2xl p-4"}>test</div>
+                    <div className={"w-full h-full bg-white rounded-2xl p-4"}>test</div>
+
                 </AutoCarousel>
             </div>
         </Section>
 
         <Section className={"flex-col"}>
-            <h2 className={"text-4xl font-semibold"}>Projects</h2>
+        <h2 className={"text-4xl font-semibold"}>Projects</h2>
             <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"}>
                 <div className={"bg-slate-300 h-[24rem] w-full rounded-2xl"}></div>
                 <div className={"bg-slate-300 h-[24rem] w-full rounded-2xl"}></div>
