@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 export default function Navbar() {
 	return (
-		<nav className={"flex items-center sticky top-0 justify-between h-16" +
-			" bg-white/60 backdrop-blur-2xl text-black shadow-sm font-geist"}>
+		<nav className={"flex items-center sticky top-0 justify-between h-16 z-50" +
+			" bg-white/60 backdrop-blur-2xl text-black shadow-sm"}>
 
 			<div className="pl-8">
 				<Link href="/">
