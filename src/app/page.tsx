@@ -1,9 +1,25 @@
+'use client'
 import Section from "@/components/section";
 import Page from "@/components/page";
 import AutoCarousel from "@/components/carousel";
+import React from "react";
+
+import ScrollCard from "@/components/scrollCard";
 
 export default function Home() {
-  return (
+
+    const skills = [
+        {'title': 'Python', 'description': 'Python is a backend programming language for writing logic and web APIs', 'colour': 'bg-cyan-700'},
+        {'title':'React', 'description':'A JavaScript library for building user interfaces', 'colour':'bg-blue-500'},
+        {'title': 'Svelte', 'description': 'Cybernetically enhanced web apps', 'colour': 'bg-amber-600'},
+        {'title':'Next.js', 'description':'The React Framework for Production', 'colour':'bg-slate-800'},
+        {'title': 'SvelteKit', 'description': 'The official Svelte framework', 'colour':'bg-amber-500'},
+        {'title': 'FastAPI', 'description': 'FastAPI is a modern, high-performance, web framework for building APIs with Python.', 'colour':'bg-green-500'},
+        {'title':'TailwindCSS', 'description':'A utility-first CSS framework for rapidly building custom designs', 'colour':'bg-cyan-500'},
+        {'title':'TypeScript', 'description':'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.', 'colour':'bg-blue-500'},
+    ]
+
+    return (
       <Page>
 
           <Section className={"flex-col z-10 "}>
@@ -32,14 +48,29 @@ export default function Home() {
 
               <Section className={"flex-col bg-slate-100 pt-32 z-0"}>
 
-                  <h2 className={"text-4xl font-semibold"}>Projects</h2>
-                  <div className={"flex flex-row gap-8"}>
-                      <div className={"bg-slate-300 h-[24rem] basis-1/3 rounded-2xl"}></div>
-                      <div className={"bg-slate-300 h-[24rem] basis-1/3 rounded-2xl"}></div>
-                      <div className={"bg-slate-300 h-[24rem] basis-1/3 rounded-2xl"}></div>
+                  <h2 className={"text-4xl font-semibold"}>Skills</h2>
+                  <div className={"flex flex-row flex-wrap gap-4 md:gap-8 transition-all transform-gpu duration-200"}>
+                      {skills.map((skill, i) => (
+                          <ScrollCard key={i}
+                              className={"h-[10rem] lg:grow-0 grow basis-1/3 md:basis-1/4 lg:basis-1/5 " +
+                              "transition-all text-white rounded-2xl " + skill.colour}>
+
+                              <h3 className={"text-2xl font-semibold p-4 text-center"}>{skill.title}</h3>
+                          </ScrollCard>
+                      ))}
                   </div>
               </Section>
           </div>
+
+          <Section className={"flex-col bg-slate-100 pt-32 z-0"}>
+
+              <h2 className={"text-4xl font-semibold"}>Projects</h2>
+              <div className={"flex flex-row gap-8"}>
+                  <div className={"bg-slate-300 h-[24rem] basis-1/3 rounded-2xl"}></div>
+                  <div className={"bg-slate-300 h-[24rem] basis-1/3 rounded-2xl"}></div>
+                  <div className={"bg-slate-300 h-[24rem] basis-1/3 rounded-2xl"}></div>
+              </div>
+          </Section>
 
 
       </Page>
