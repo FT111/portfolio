@@ -5,18 +5,28 @@ import AutoCarousel from "@/components/carousel";
 import React from "react";
 
 import ScrollCard from "@/components/scrollCard";
+import Image from "next/image";
+
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
 
 export default function Home() {
 
     const skills = [
-        {'title': 'Python', 'description': 'Python is a backend programming language for writing logic and web APIs', 'colour': 'bg-cyan-700'},
-        {'title':'React', 'description':'A JavaScript library for building user interfaces', 'colour':'bg-blue-500'},
-        {'title': 'Svelte', 'description': 'Cybernetically enhanced web apps', 'colour': 'bg-amber-600'},
-        {'title':'Next.js', 'description':'The React Framework for Production', 'colour':'bg-slate-800'},
-        {'title': 'SvelteKit', 'description': 'The official Svelte framework', 'colour':'bg-amber-500'},
-        {'title': 'FastAPI', 'description': 'FastAPI is a modern, high-performance, web framework for building APIs with Python.', 'colour':'bg-green-500'},
-        {'title':'TailwindCSS', 'description':'A utility-first CSS framework for rapidly building custom designs', 'colour':'bg-cyan-500'},
-        {'title':'TypeScript', 'description':'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.', 'colour':'bg-blue-500'},
+        {'title': 'Python', 'description': 'Python is a backend programming language for writing logic and web APIs', 'colour': 'bg-cyan-700', 'icon': 'PythonIcon.png'},
+        {'title':'React', 'description':'A JavaScript library for building user interfaces', 'colour':'bg-blue-500', 'icon': 'ReactIcon.svg'},
+        {'title': 'Svelte', 'description': 'Cybernetically enhanced web apps', 'colour': 'bg-orange-600', 'icon': 'SvelteIcon.svg'},
+        {'title':'SQL + Relational DBs', 'description':'SQL and relational databases.', 'colour':'bg-slate-800'},
+        {'title': 'SvelteKit', 'description': 'The official Svelte framework', 'colour':'bg-orange-500', 'icon': 'SvelteIcon.svg'},
+        {'title': 'FastAPI', 'description': 'FastAPI is a modern, high-performance, web framework for building APIs with Python.', 'colour':'bg-teal-700', 'icon': 'FastAPIIcon.svg'},
+        {'title':'Tailwind CSS', 'description':'A utility-first CSS framework for rapidly building custom designs', 'colour':'bg-cyan-700', 'icon': 'TailwindIcon.svg'},
+        {'title':'TypeScript', 'description':'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.', 'colour':'bg-sky-600', 'icon': 'TypeScriptIcon.png'},
     ]
 
     return (
@@ -51,18 +61,39 @@ export default function Home() {
                   <h2 className={"text-4xl font-semibold"}>Skills</h2>
                   <div className={"flex flex-row flex-wrap gap-4 md:gap-8 transition-all transform-gpu duration-200"}>
                       {skills.map((skill, i) => (
-                          <ScrollCard key={i}
-                              className={"h-[10rem] lg:grow-0 grow basis-1/3 md:basis-1/4 lg:basis-1/5 " +
-                              "transition-all text-white rounded-2xl " + skill.colour}>
+                          <>
+                              <Dialog>
+                                  <DialogTrigger className={"w-full h-full"}>
+                                      <ScrollCard key={i}
+                                          className={"h-[10rem] lg:grow-0 grow basis-1/3 md:basis-1/4 lg:basis-1/5 " +
+                                          "transition-all text-white rounded-2xl  " + skill.colour}>
 
-                              <h3 className={"text-2xl font-semibold p-4 text-center"}>{skill.title}</h3>
-                          </ScrollCard>
+                                          <h3 className={"text-xl font-semibold p-4"}>{skill.title}</h3>
+
+                                          {/* shows if icon exists */}
+                                          <div className={"flex flex-col justify-center items-center w-full"}>
+                                              {skill.icon && <Image src={'/assets/icons/' + skill['icon']} alt={skill.title + ' icon'} width={70} height={70} />}
+                                          </div>
+                                      </ScrollCard>
+                                  </DialogTrigger>
+
+                                  <DialogContent>
+                                      <DialogHeader>
+                                      <DialogTitle>Are you absolutely sure?</DialogTitle>
+                                          <DialogDescription>
+                                          This action cannot be undone. This will permanently delete your account
+                                          and remove your data from our servers.
+                                          </DialogDescription>
+                                      </DialogHeader>
+                                  </DialogContent>
+                              </Dialog>
+                          </>
                       ))}
                   </div>
               </Section>
           </div>
 
-          <Section className={"flex-col bg-slate-100 pt-32 z-0"}>
+          <Section className={"flex-col bg-blue-100 pt-32 z-0"}>
 
               <h2 className={"text-4xl font-semibold"}>Projects</h2>
               <div className={"flex flex-row gap-8"}>

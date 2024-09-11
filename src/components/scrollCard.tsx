@@ -38,8 +38,8 @@ export default function ScrollCard({ children, ...props }: Props) {
 		};
 	}, []);
 
-	const invisibleClasses = ' opacity-10 -translate-y-5 ';
-	const visibleClasses = ' opacity-100 translate-y-0 ';
+	const invisibleClasses = ' opacity-0 blur-sm -translate-y-10 ';
+	const visibleClasses = ' opacity-100 blur-none translate-y-0 ';
 	let classes = 'transition-all duration-150 ' + invisibleClasses + (props.className || '');
 
 	if (isVisible) {
