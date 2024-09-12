@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={SatoshiFont.variable}>
+    <html lang="en" className={`${SatoshiFont.variable} scroll-smooth`}>
       <body
         className={"bg-white text-black font-sans"}
       >
