@@ -25,7 +25,7 @@ export default function Home() {
 
           <Section className={"flex-col z-10 "}>
               <h1 className={"md:text-6xl text-5xl tracking-tight font-extrabold text-slate-900 " +
-                  "max-w-full md:leading-[4rem]"}>Hi, i'm <span className={"text-accent stroke stroke-cyan-900"}>Freddie.</span>
+                  "max-w-full md:leading-[4rem]"}>Hi, i'm <span className={"text-accent stroke stroke-cyan-900"}>Freddie</span>.
                   <span className={"font-bold text-slate-500"}> I'm a computer science student.</span>
               </h1>
 
@@ -80,13 +80,13 @@ export default function Home() {
 
           </div>
 
-          <Section id={'projects'} className={"flex-col bg-slate-800 py-32 z-0"}>
+          <Section id={'projects'} className={"flex-col bg-slate-800 py-32 text-slate-50 "}>
 
               <h2 className={"text-4xl font-semibold"}>Projects</h2>
-              <div className={"flex flex-row gap-8"}>
-                  <div className={"bg-slate-300 h-[24rem] basis-1/3 rounded-2xl"}></div>
-                  <div className={"bg-slate-300 h-[24rem] basis-1/3 rounded-2xl"}></div>
-                  <div className={"bg-slate-300 h-[24rem] basis-1/3 rounded-2xl"}></div>
+              <div className={"flex flex-col gap-24"}>
+                  <div className={"bg-slate-50 w-full h-[30rem] rounded-2xl"}></div>
+                  <div className={"bg-slate-50 w-full h-[30rem] rounded-2xl"}></div>
+                  <div className={"bg-slate-50 w-full h-[30rem]  rounded-2xl"}></div>
               </div>
           </Section>
 
