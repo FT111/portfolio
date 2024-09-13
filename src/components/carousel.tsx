@@ -35,7 +35,7 @@ export default function AutoCarousel ({children}: {children: React.ReactNode}) {
 
 
 	return (
-		<Carousel className={"w-full h-full"} opts={{loop: true, align:'center'}} setApi={setApi}>
+		<Carousel className={"w-full h-full"} opts={{loop: true, align:'center', startIndex:1}} setApi={setApi}>
 			<CarouselContent className={"w-full h-full rounded-2xl p-4 px-8"}>
 				{items.map((item, i) => (
 					<CarouselItem className={"w-full h-full"} key={i} onMouseEnter={() => setScrolling(false)} onMouseLeave={() => setScrolling(true)}>
@@ -43,7 +43,7 @@ export default function AutoCarousel ({children}: {children: React.ReactNode}) {
 					</CarouselItem>
 				))}
 			</CarouselContent>
-			<CarouselPrevious />
-			<CarouselNext />
+			<CarouselPrevious className={"sm:flex hidden"} />
+			<CarouselNext className={"sm:flex hidden"} />
 		</Carousel>
 );}
