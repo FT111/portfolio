@@ -24,7 +24,7 @@ export default function Navbar() {
 				});
 			},
 			{
-				threshold: 0.4, // Percentage of the target's visibility to trigger the observer
+				threshold: 0.3, // Percentage of the target's visibility to trigger the observer
 			}
 		);
 
@@ -40,10 +40,13 @@ export default function Navbar() {
 		};
 	}, []);
 
+	const linkClasses = `p-2 px-3 transition-all rounded-xl 
+	${isIntersecting ? 'hover:bg-slate-800/40' : 'hover:bg-accent/30'}`;
+
 
 	return (
 		<nav ref={targetRef} className={`flex items-center sticky top-0 justify-between h-16 z-50 transition-colors " +
-			" backdrop-blur-2xl text-black shadow-sm ${isIntersecting ? 'bg-slate-700/80 text-white' : 'bg-slate-100/75'} `}>
+			" backdrop-blur-2xl text-black shadow-sm ${isIntersecting ? 'bg-cyan-950/90 text-white' : 'bg-slate-100/75'} `}>
 
 			<div className="pl-8">
 				<Link href="/">
@@ -51,12 +54,12 @@ export default function Navbar() {
 				</Link>
 			</div>
 			<div className="flex flex-row gap-3 pr-8">
-				<Link href="/#projects" className={"scaleInUnderline"}>
-					<p className="p-4">Projects</p>
+				<Link href="/#projects">
+					<p className={linkClasses}>Projects</p>
 				</Link>
 
-				<Link href="/about" className={"scaleInUnderline"}>
-					<p className="p-4">About</p>
+				<Link href="/about">
+					<p className={linkClasses}>About</p>
 				</Link>
 			</div>
 		</nav>

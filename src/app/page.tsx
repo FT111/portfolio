@@ -5,6 +5,7 @@ import AutoCarousel from "@/components/carousel";
 import React from "react";
 import ScrollCard from "@/components/scrollCard";
 import Image from "next/image";
+import DescriptorCard from "@/components/descriptorCard";
 
 
 export default function Home() {
@@ -84,9 +85,9 @@ export default function Home() {
 
               <h2 className={"text-4xl font-semibold"}>Projects</h2>
               <div className={"flex flex-col gap-24"}>
-                  <div className={"bg-slate-50 w-full h-[30rem] rounded-2xl"}></div>
-                  <div className={"bg-slate-50 w-full h-[30rem] rounded-2xl"}></div>
-                  <div className={"bg-slate-50 w-full h-[30rem]  rounded-2xl"}></div>
+                  <DescriptorCard alternate={false} imageHREF={"/assets/projectThumbnails/portfolio.png"}></DescriptorCard>
+                  <DescriptorCard></DescriptorCard>
+                  <DescriptorCard></DescriptorCard>
               </div>
           </Section>
 
