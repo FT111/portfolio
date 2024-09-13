@@ -86,7 +86,7 @@ export default function Home() {
               <h2 className={"text-4xl font-semibold"}>Projects</h2>
               <div className={"flex flex-col gap-24"}>
                   <DescriptorCard alternate={false} imageHREF={"/assets/projectThumbnails/portfolio.png"}></DescriptorCard>
-                  <DescriptorCard></DescriptorCard>
+                  <DescriptorCard alternate={true} imageHREF={"/assets/projectThumbnails/eCommerce.png"}></DescriptorCard>
                   <DescriptorCard></DescriptorCard>
               </div>
           </Section>

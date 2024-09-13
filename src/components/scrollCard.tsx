@@ -4,11 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 interface Props {
 	children: React.ReactNode;
 	className?: string;
+	threshold?: number;
 }
 
 export default function ScrollCard({ children, ...props }: Props) {
 	const [isVisible, setIsVisible] = useState(false); // State to track visibility
 	const elementRef = useRef(null); // Ref for the target element
+
+	const thresholdVal = props.threshold || 0.5; // Default threshold value
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -20,7 +23,7 @@ export default function ScrollCard({ children, ...props }: Props) {
 				}
 			},
 			{
-				threshold: 0.5, // Adjust this value as needed
+				threshold: thresholdVal, // Adjust this value as needed
 			}
 		);
 
