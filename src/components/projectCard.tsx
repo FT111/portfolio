@@ -22,7 +22,7 @@ export default function ProjectCard({ children, ...props }: Props) {
 			<div className={`${props.alternate ? 'md:order-1' : ''} flex flex-col md:flex-row rounded-2xl basis-1/2`}>
 				{props.imageHREF && (
 						<div className={`grid grid-cols-1 basis-8/12 grid-rows-1 grow items-center ${props.alternate ? `md:order-2 sm:rounded-tl-none sm:rounded-r-2xl` : `sm:rounded-tr-none sm:rounded-l-2xl`} ` +
-							"rounded-t-2xl place-items-center justify-center bg-slate-200 align-middle md:w-1/2 w-full overflow-hidden"}>
+							"rounded-t-2xl place-items-center justify-center bg-slate-200 align-middle w-full overflow-hidden"}>
 
 							<div style={{gridRow:1, gridColumn:1, backgroundImage: `url(${props.blurredHREF})`, backgroundSize:'cover'}} className={"w-full h-full bg-black saturate-150 brightness-75 hue-rotate-15"} />
 							<ScrollCard style={{gridRow:1, gridColumn:1}} className={"p-8 transition-all h-full w-full grid items-center bg-none"}>
@@ -37,18 +37,18 @@ export default function ProjectCard({ children, ...props }: Props) {
 					<p className={"p-3 text-xl font-semibold text-muted-foreground"}>Stack</p>
 					{props.stack && (
 						props.stack.map((stack, i) => (
-							<div key={i} className={"flex flex-row w-20 group-hover:gap-3 md:group-hover:w-48 items-center p-4 transition-all "}>
+							<div key={i} className={`flex  w-20 gap-3 md:group-hover:w-48 items-center p-4 transition-all ${props.alternate ? 'flex-row' : 'flex-row-reverse'}  `}>
 								<Image src={stack.icon} alt={stack.title + ' icon'} width={50} height={50} />
 
-								<p className={"hidden md:block opacity-0 translate-x-3 group-hover:translate-x-0 group-hover:opacity-100" +
-									" truncate text-slate-950 transition-all"}>{stack.title}</p>
+								<p className={"hidden md:block opacity-0  group-hover:translate-x-0 group-hover:opacity-100" +
+									` truncate text-slate-950 transition-all ${props.alternate ? '-translate-x-7' : 'translate-x-7'}`}>{stack.title}</p>
 							</div>
 						))
 					)}
 				</div>
 			</div>
 
-			<div className={"grow p-10 text-slate-900"}>
+			<div className={"basis-1/2 p-10 text-slate-900"}>
 				{children}
 			</div>
 		</ScrollCard>
