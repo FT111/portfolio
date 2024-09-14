@@ -10,36 +10,36 @@ import ProjectCard from "@/components/projectCard";
 export default function Home() {
 
     const skills = [
-        {'title': 'Python', 'description': 'Python is a backend programming language for writing logic and web APIs', 'colour': 'bg-cyan-700', 'icon': 'PythonIcon.png'},
-        {'title':'React', 'description':'A JavaScript library for building user interfaces', 'colour':'bg-blue-500', 'icon': 'ReactIcon.svg'},
-        {'title': 'Svelte', 'description': 'Cybernetically enhanced web apps', 'colour': 'bg-orange-600', 'icon': 'SvelteIcon.svg'},
+        {'title': 'Python', 'description': 'Python is a backend programming language for writing logic and web APIs', 'colour': 'bg-cyan-700', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/PythonIcon_oh2hs2.png'},
+        {'title':'React', 'description':'A JavaScript library for building user interfaces', 'colour':'bg-blue-500', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/ReactIcon_n8rlzk.svg'},
+        {'title': 'Svelte', 'description': 'Cybernetically enhanced web apps', 'colour': 'bg-orange-600', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg'},
         {'title':'SQL and relational databases', 'description':'SQL and relational databases.', 'colour':'bg-slate-800'},
-        {'title': 'SvelteKit', 'description': 'The official Svelte framework', 'colour':'bg-orange-500', 'icon': 'SvelteIcon.svg'},
-        {'title': 'FastAPI', 'description': 'FastAPI is a modern, high-performance, web framework for building APIs with Python.', 'colour':'bg-teal-700', 'icon': 'FastAPIIcon.svg'},
-        {'title':'Tailwind CSS', 'description':'A utility-first CSS framework for rapidly building custom designs', 'colour':'bg-cyan-800', 'icon': 'TailwindIcon.svg'},
-        {'title':'TypeScript', 'description':'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.', 'colour':'bg-sky-700', 'icon': 'TypeScriptIcon.png'},
+        {'title': 'SvelteKit', 'description': 'The official Svelte framework', 'colour':'bg-orange-500', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg'},
+        {'title': 'FastAPI', 'description': 'FastAPI is a modern, high-performance, web framework for building APIs with Python.', 'colour':'bg-teal-700', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FastAPIIcon_rl3qx9.svg'},
+        {'title':'Tailwind CSS', 'description':'A utility-first CSS framework for rapidly building custom designs', 'colour':'bg-cyan-800', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg'},
+        {'title':'TypeScript', 'description':'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.', 'colour':'bg-sky-700', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/TypeScriptIcon_qtqu0r.png'},
     ]
 
     const projects = [
         {'title': 'Portfolio', 'description': 'A portfolio website to showcase my projects', 'stack': [
-                {'title': 'React', 'icon': 'ReactIcon.svg'},
-                {'title': 'Next.js', 'icon': 'NextJSIcon.png'},
-                {'title': 'Tailwind CSS', 'icon': 'TailwindIcon.svg'},
+                {'title': 'React', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/ReactIcon_n8rlzk.svg'},
+                {'title': 'Next.js', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/NextJSIcon_axledu.png'},
+                {'title': 'Tailwind CSS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg'},
             ], 'image': 'portfolio'},
         {'title': 'eCommerce', 'description': 'An eCommerce website for selling products', 'stack': [
-                {'title': 'Svelte', 'icon': 'SvelteIcon.svg'},
-                {'title': 'SvelteKit', 'icon': 'SvelteIcon.svg'},
-                {'title': 'Python', 'icon': 'PythonIcon.png'},
-                {'title': 'FastAPI', 'icon': 'FastAPIIcon.svg'},
-                {'title': 'Tailwind CSS', 'icon': 'TailwindIcon.svg'},
-                {'title': 'SQLite', 'icon': 'SQLiteIcon.svg'},
+                {'title': 'Svelte', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg'},
+                {'title': 'SvelteKit', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg'},
+                {'title': 'Python', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/PythonIcon_oh2hs2.png'},
+                {'title': 'FastAPI', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FastAPIIcon_rl3qx9.svg'},
+                {'title': 'Tailwind CSS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg'},
+                {'title': 'SQLite', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/SQLiteIcon_fysdul.svg'},
 
             ], 'image': 'eCommerce'},
         {'title': 'Booking System', 'description': 'A booking system for booking appointments', 'stack': [
-                {'title': 'Python', 'icon': 'PythonIcon.png'},
-                {'title': 'Flask', 'icon': 'FlaskIcon.svg'},
-                {'title': 'Tailwind CSS', 'icon': 'TailwindIcon.svg'},
-                {'title': 'AWS RDS', 'icon': 'AWSIcon.svg'},
+                {'title': 'Python', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/PythonIcon_oh2hs2.png'},
+                {'title': 'Flask', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FlaskIcon_j7huim.svg'},
+                {'title': 'Tailwind CSS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg'},
+                {'title': 'AWS RDS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FastAPIIcon_rl3qx9.svg'},
             ], 'image': 'BookingSystem'}]
 
 
@@ -84,7 +84,7 @@ export default function Home() {
                               {/* shows if icon exists */}
                               <div className={"flex flex-col justify-center items-center w-full"}>
                                   {skill.icon &&
-                                      <Image src={'/assets/icons/' + skill['icon']} alt={skill.title + ' icon'}
+                                      <Image src={`${skill['icon']}`} alt={skill.title + ' icon'}
                                              width={70} height={70}/>}
                               </div>
                           </ScrollCard>
