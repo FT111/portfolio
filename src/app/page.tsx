@@ -5,7 +5,8 @@ import AutoCarousel from "@/components/carousel";
 import React from "react";
 import ScrollCard from "@/components/scrollCard";
 import Image from "next/image";
-import DescriptorCard from "@/components/descriptorCard";
+import ProjectCard from "@/components/projectCard";
+import {ProjectStack} from "@/lib/types";
 
 
 export default function Home() {
@@ -18,16 +19,39 @@ export default function Home() {
         {'title': 'SvelteKit', 'description': 'The official Svelte framework', 'colour':'bg-orange-500', 'icon': 'SvelteIcon.svg'},
         {'title': 'FastAPI', 'description': 'FastAPI is a modern, high-performance, web framework for building APIs with Python.', 'colour':'bg-teal-700', 'icon': 'FastAPIIcon.svg'},
         {'title':'Tailwind CSS', 'description':'A utility-first CSS framework for rapidly building custom designs', 'colour':'bg-cyan-800', 'icon': 'TailwindIcon.svg'},
-        {'title':'TypeScript', 'description':'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.', 'colour':'bg-sky-600', 'icon': 'TypeScriptIcon.png'},
+        {'title':'TypeScript', 'description':'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.', 'colour':'bg-sky-700', 'icon': 'TypeScriptIcon.png'},
     ]
+
+    const projects = [
+        {'title': 'Portfolio', 'description': 'A portfolio website to showcase my projects', 'stack': [
+                {'title': 'React', 'icon': 'ReactIcon.svg'},
+                {'title': 'Next.js', 'icon': 'NextJSIcon.png'},
+                {'title': 'Tailwind CSS', 'icon': 'TailwindIcon.svg'},
+            ], 'image': 'portfolio'},
+        {'title': 'eCommerce', 'description': 'An eCommerce website for selling products', 'stack': [
+                {'title': 'Svelte', 'icon': 'SvelteIcon.svg'},
+                {'title': 'SvelteKit', 'icon': 'SvelteIcon.svg'},
+                {'title': 'Python', 'icon': 'PythonIcon.png'},
+                {'title': 'FastAPI', 'icon': 'FastAPIIcon.svg'},
+                {'title': 'Tailwind CSS', 'icon': 'TailwindIcon.svg'},
+                {'title': 'SQLite', 'icon': 'SQLiteIcon.svg'},
+
+            ], 'image': 'eCommerce'},
+        {'title': 'Booking System', 'description': 'A booking system for booking appointments', 'stack': [
+                {'title': 'Python', 'icon': 'PythonIcon.png'},
+                {'title': 'Flask', 'icon': 'FlaskIcon.svg'},
+                {'title': 'Tailwind CSS', 'icon': 'TailwindIcon.svg'},
+                {'title': 'AWS RDS', 'icon': 'AWSIcon.svg'},
+            ], 'image': 'BookingSystem'}]
+
 
     return (
       <Page>
 
           <Section className={"flex-col z-10 "}>
-              <h1 className={"md:text-6xl text-5xl tracking-tight font-extrabold text-slate-900 " +
+              <h1 className={"md:text-6xl text-5xl tracking-tight font-bold text-slate-900 " +
                   "max-w-full md:leading-[4rem]"}>Hi, i'm <span className={"text-accent stroke stroke-cyan-900"}>Freddie</span>.
-                  <span className={"font-bold text-slate-500"}> I'm a computer science student.</span>
+                  <span className={"font-semibold text-slate-500"}> I'm a computer science student.</span>
               </h1>
 
               <div className={"bg-slate-300 h-[28rem] flex flex-row justify-center w-full rounded-2xl " +
@@ -71,7 +95,7 @@ export default function Home() {
               </Section>
 
               <div className={"bg-slate-800"}>
-                  <svg id="wave"  transform={"rotate(180)"} viewBox="0 0 1440 220" version="1.1"
+                  <svg id="wave" className={"rotate-180"} viewBox="0 0 1440 220" version="1.1"
                        xmlns="http://www.w3.org/2000/svg">
 
                       <path  className={"w-full fill-slate-100"}
@@ -85,9 +109,16 @@ export default function Home() {
 
               <h2 className={"text-4xl font-semibold"}>Projects</h2>
               <div className={"flex flex-col gap-24"}>
-                  <DescriptorCard alternate={false} imageHREF={"/assets/projectThumbnails/portfolio.png"}></DescriptorCard>
-                  <DescriptorCard alternate={true} imageHREF={"/assets/projectThumbnails/eCommerce.png"}></DescriptorCard>
-                  <DescriptorCard></DescriptorCard>
+                  {projects.map((project, i) => (
+                      <ProjectCard key={i} imageHREF={`/assets/projectThumbnails/${project.image}.png`}
+                                   blurredHREF={`/assets/projectThumbnails/${project.image}blur.png`}
+                                   stack={project.stack}
+                                   alternate={i % 2 === 0}
+                      >
+                          <h3 className={"text-2xl font-semibold"}>{project.title}</h3>
+                          <p className={"text-lg"}>{project.description}</p>
+                      </ProjectCard>
+                  ))}
               </div>
           </Section>
 
