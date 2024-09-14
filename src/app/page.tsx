@@ -107,7 +107,7 @@ export default function Home() {
 
           <Section id={'projects'} className={"flex-col alternateNav bg-slate-800 py-32 text-slate-50 pt-16 "}>
 
-              <h2 className={"text-4xl font-semibold"}>Projects</h2>
+              <h2 className={"text-4xl font-semibold"}>Solo Projects</h2>
               <div className={"flex flex-col gap-24"}>
                   {projects.map((project, i) => (
                       <ProjectCard key={i} imageHREF={`/assets/projectThumbnails/${project.image}.png`}

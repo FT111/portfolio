@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 interface Props {
 	children: React.ReactNode;
 	className?: string;
+	style?: React.CSSProperties;
 	threshold?: number;
 }
 
@@ -51,7 +52,7 @@ export default function ScrollCard({ children, ...props }: Props) {
 	}
 
 	return (
-		<div ref={elementRef} className={classes}>
+		<div ref={elementRef} style={props.style} className={classes}>
 			{children}
 		</div>
 	);

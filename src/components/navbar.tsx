@@ -41,7 +41,7 @@ export default function Navbar() {
 	}, []);
 
 	const linkClasses = `p-2 px-3 transition-all rounded-xl 
-	${isIntersecting ? 'hover:bg-slate-800/40' : 'hover:bg-accent/30'}`;
+	${isIntersecting ? 'hover:bg-slate-900/70' : 'hover:bg-accent/30'}`;
 
 
 	return (
