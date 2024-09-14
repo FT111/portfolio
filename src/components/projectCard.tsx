@@ -30,7 +30,7 @@ export default function ProjectCard({ children, ...props }: Props) {
 			)}
 
 			{/* Stack column */}
-			<div className={`flex flex-row md:flex-col overflow-y-scroll px-2 bg-slate-100 ${props.alternate ? 'md:order-1' : ''}
+			<div className={`flex flex-row md:flex-col overflow-x-scroll md:overflow-y-scroll px-2 bg-slate-100 ${props.alternate ? 'md:order-1' : ''}
 							group md:hover:w-fit items-center transition-all transform-gpu`}>
 				<p className={"p-3 text-xl font-semibold text-muted-foreground"}>Stack</p>
 				{props.stack && (
