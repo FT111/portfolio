@@ -6,8 +6,6 @@ import React from "react";
 import ScrollCard from "@/components/scrollCard";
 import Image from "next/image";
 import ProjectCard from "@/components/projectCard";
-import {ProjectStack} from "@/lib/types";
-
 
 export default function Home() {
 
@@ -50,8 +48,8 @@ export default function Home() {
 
           <Section className={"flex-col z-10 "}>
               <h1 className={"md:text-6xl text-5xl tracking-tight font-bold text-slate-900 " +
-                  "max-w-full md:leading-[4rem]"}>Hi, i'm <span className={"text-accent stroke stroke-cyan-900"}>Freddie</span>.
-                  <span className={"font-semibold text-slate-500"}> I'm a computer science student.</span>
+                  "max-w-full md:leading-[4rem]"}>Hi, i&apos;m <span className={"text-accent stroke stroke-cyan-900"}>Freddie</span>.
+                  <span className={"font-semibold text-slate-500"}> I&apos;m a computer science student.</span>
               </h1>
 
               <div className={"bg-slate-300 h-[28rem] flex flex-row justify-center w-full rounded-2xl " +
