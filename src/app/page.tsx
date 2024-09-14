@@ -25,7 +25,8 @@ export default function Home() {
                 {'title': 'React', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/ReactIcon_n8rlzk.svg'},
                 {'title': 'Next.js', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/NextJSIcon_axledu.png'},
                 {'title': 'Tailwind CSS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg'},
-            ], 'image': 'portfolio'},
+            ], 'image': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726332716/portfolio_afx1dx.png',
+            'blurred': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726332717/portfolioblur_mdlwo7.png'},
         {'title': 'eCommerce', 'description': 'An eCommerce website for selling products', 'stack': [
                 {'title': 'Svelte', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg'},
                 {'title': 'SvelteKit', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg'},
@@ -34,13 +35,15 @@ export default function Home() {
                 {'title': 'Tailwind CSS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg'},
                 {'title': 'SQLite', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/SQLiteIcon_fysdul.svg'},
 
-            ], 'image': 'eCommerce'},
+            ], 'image': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726332714/eCommerce_r63kqs.png',
+            'blurred': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726332715/eCommerceblur_qvqk9z.png'},
         {'title': 'Booking System', 'description': 'A booking system for booking appointments', 'stack': [
                 {'title': 'Python', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/PythonIcon_oh2hs2.png'},
                 {'title': 'Flask', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FlaskIcon_j7huim.svg'},
                 {'title': 'Tailwind CSS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg'},
-                {'title': 'AWS RDS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FastAPIIcon_rl3qx9.svg'},
-            ], 'image': 'BookingSystem'}]
+                {'title': 'AWS RDS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331493/AWS_icon_shtjnu.png'},
+            ], 'image': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726332713/BookingSystem_e1asmd.png',
+            'blurred': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726332712/BookingSystemblur_e8vom9.png'},]
 
 
     return (
@@ -108,8 +111,8 @@ export default function Home() {
               <h2 className={"text-4xl font-semibold"}>Solo Projects</h2>
               <div className={"flex flex-col gap-24"}>
                   {projects.map((project, i) => (
-                      <ProjectCard key={i} imageHREF={`/assets/projectThumbnails/${project.image}.png`}
-                                   blurredHREF={`/assets/projectThumbnails/${project.image}blur.png`}
+                      <ProjectCard key={i} imageHREF={project.image}
+                                   blurredHREF={project.blurred}
                                    stack={project.stack}
                                    alternate={i % 2 === 0}
                       >
