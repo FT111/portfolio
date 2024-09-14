@@ -24,6 +24,8 @@ export default function Home() {
         {'title': 'Portfolio', 'description': 'A portfolio website to showcase my projects', 'stack': [
                 {'title': 'React', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/ReactIcon_n8rlzk.svg'},
                 {'title': 'Next.js', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/NextJSIcon_axledu.png'},
+                {'title': 'TypeScript', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/TypeScriptIcon_qtqu0r.png'},
+                {'title': 'Vercel', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726333899/Vercel_logo_oobok8.svg'},
                 {'title': 'Tailwind CSS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg'},
             ], 'image': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726332716/portfolio_afx1dx.png',
             'blurred': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726332717/portfolioblur_mdlwo7.png'},
@@ -37,7 +39,7 @@ export default function Home() {
 
             ], 'image': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726332714/eCommerce_r63kqs.png',
             'blurred': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726332715/eCommerceblur_qvqk9z.png'},
-        {'title': 'Booking System', 'description': 'A booking system for booking appointments', 'stack': [
+        {'title': 'Booking System', 'description': 'An internal booking system for a cinema', 'stack': [
                 {'title': 'Python', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/PythonIcon_oh2hs2.png'},
                 {'title': 'Flask', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FlaskIcon_j7huim.svg'},
                 {'title': 'Tailwind CSS', 'icon': 'https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg'},
