@@ -46,7 +46,7 @@ export default function Navbar() {
 
 	return (
 		<nav ref={targetRef} className={`flex items-center sticky top-0 justify-between h-16 z-50 transition-colors " +
-			" backdrop-blur-2xl text-black shadow-sm ${isIntersecting ? 'bg-cyan-950/90 text-white' : 'bg-slate-100/75'} `}>
+			" backdrop-blur-2xl text-black shadow-sm ${isIntersecting ? 'bg-cyan-950/90 text-white' : 'bg-slate-300/75'} `}>
 
 			<div className="pl-8">
 				<Link href="/">

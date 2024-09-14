@@ -18,7 +18,6 @@ export default function AutoCarousel ({children}: {children: React.ReactNode}) {
 
 		// Scroll every 3 seconds
 		const interval = setInterval(() => {
-			console.log('scrolling: '+scrolling)
 			// Only scroll if the user is not interacting with the carousel
 			if (scrolling) {
 				api.scrollNext()
@@ -38,7 +37,7 @@ export default function AutoCarousel ({children}: {children: React.ReactNode}) {
 		<Carousel className={"w-full h-full"} opts={{loop: true, align:'center', startIndex:1}} setApi={setApi}>
 			<CarouselContent className={"w-full h-full rounded-2xl p-4 px-8"}>
 				{items.map((item, i) => (
-					<CarouselItem className={"w-full h-full"} key={i} onMouseEnter={() => setScrolling(false)} onMouseLeave={() => setScrolling(true)}>
+					<CarouselItem className={"w-full h-full"} key={i} onPointerEnter={() => setScrolling(false)} onPointerLeave={() => setScrolling(true)}>
 						{item}
 					</CarouselItem>
 				))}
