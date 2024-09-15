@@ -1,5 +1,7 @@
-import Satoshi from 'next/font/local'
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
+
+import Satoshi from 'next/font/local'
 import "./globals.css";
 import Navbar from "@/components/navbar";
 
@@ -16,10 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${SatoshiFont.variable} scroll-smooth tracking-tighter sm:tracking-normal`}>
+    <Analytics />
       <body
         className={"bg-white text-black font-sans"}
       >
-      <Navbar />
+        <Navbar />
         {children}
       </body>
     </html>
