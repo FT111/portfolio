@@ -1,5 +1,6 @@
 import React from "react";
 import { Analytics } from "@vercel/analytics/react";
+import {SpeedInsights} from "@vercel/speed-insights/next";
 
 import Satoshi from 'next/font/local'
 import "./globals.css";
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${SatoshiFont.variable} scroll-smooth tracking-tighter sm:tracking-normal`}>
     <Analytics />
+    <SpeedInsights />
       <body
         className={"bg-white text-black font-sans"}
       >
