@@ -37,8 +37,8 @@ export default function ProjectCard({ children, ...props }: Props) {
 					<p className={"p-3 text-xl font-semibold bg-slate-200/50 backdrop-blur-xl sticky top-0 md:w-full text-center  z-20 text-muted-foreground"}>Stack</p>
 					{props.stack && (
 						props.stack.map((stack, i) => (
-							<div key={i} className={`flex w-20 gap-3 md:group-hover:w-56 items-center p-4 transition-all ${props.alternate ? 'flex-row' : 'flex-row-reverse'}  `}>
-								<Image className={" md:h-11  md:w-max w-24  "} src={stack.icon} alt={stack.title + ' icon'} width={50} height={50} />
+							<div key={i} className={`flex w-20 h-auto gap-3 md:group-hover:w-56 items-center p-4 transition-all ${props.alternate ? 'flex-row' : 'flex-row-reverse'}  `}>
+								<Image className={" md:h-11 h-auto md:w-max w-24  "} src={stack.icon} alt={stack.title + ' icon'} width={50} height={50} />
 
 								<p className={"hidden md:block opacity-0  group-hover:translate-x-0 group-hover:opacity-100" +
 									` truncate text-slate-950 transition-all ${props.alternate ? '-translate-x-7' : 'translate-x-7'}`}>{stack.title}</p>
