@@ -6,7 +6,6 @@ import React from "react";
 import ScrollCard from "@/components/scrollCard";
 import Image from "next/image";
 import ProjectCard from "@/components/projectCard";
-import css from "styled-jsx/css";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 
