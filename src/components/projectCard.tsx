@@ -32,13 +32,13 @@ export default function ProjectCard({ children, ...props }: Props) {
 				)}
 
 				{/* Stack column */}
-				<div className={`flex flex-row md:flex-col overflow-x-scroll md:overflow-y-scroll bg-slate-100 order-0 ${props.alternate ? 'md:order-1' : ''}
-								group items-center transition-all duration-250 transform-gpu`}>
-					<p className={"p-3 text-xl font-semibold bg-slate-200/50 backdrop-blur-xl sticky top-0 w-full text-center z-20 text-muted-foreground"}>Stack</p>
+				<div className={`flex flex-row md:flex-col overflow-x-scroll md:overflow-y-scroll md:overflow-x-hidden bg-slate-100 order-0 ${props.alternate ? 'md:order-1 ' : 'items-end'}
+								group transition-all duration-250 transform-gpu`}>
+					<p className={"p-3 text-xl font-semibold bg-slate-200/50 backdrop-blur-xl sticky top-0 md:w-full text-center  z-20 text-muted-foreground"}>Stack</p>
 					{props.stack && (
 						props.stack.map((stack, i) => (
-							<div key={i} className={`flex w-20 gap-3 md:group-hover:w-48 items-center p-4 transition-all ${props.alternate ? 'flex-row' : 'flex-row-reverse'}  `}>
-								<Image className={"h-auto"} src={stack.icon} alt={stack.title + ' icon'} width={50} height={50} />
+							<div key={i} className={`flex w-20 gap-3 md:group-hover:w-56 items-center p-4 transition-all ${props.alternate ? 'flex-row' : 'flex-row-reverse'}  `}>
+								<Image className={" md:h-11  md:w-max w-24  "} src={stack.icon} alt={stack.title + ' icon'} width={50} height={50} />
 
 								<p className={"hidden md:block opacity-0  group-hover:translate-x-0 group-hover:opacity-100" +
 									` truncate text-slate-950 transition-all ${props.alternate ? '-translate-x-7' : 'translate-x-7'}`}>{stack.title}</p>
