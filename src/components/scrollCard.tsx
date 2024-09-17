@@ -6,6 +6,8 @@ interface Props {
 	className?: string;
 	style?: React.CSSProperties;
 	threshold?: number;
+	onClick?: () => void;
+
 }
 
 export default function ScrollCard({ children, ...props }: Props) {
@@ -52,7 +54,7 @@ export default function ScrollCard({ children, ...props }: Props) {
 	}
 
 	return (
-		<div ref={elementRef} style={props.style} className={classes}>
+		<div ref={elementRef} style={props.style} className={classes} onClick={() => {props.onClick()}}>
 			{children}
 		</div>
 	);
