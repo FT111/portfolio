@@ -74,7 +74,7 @@ export default function Home() {
                           <div
                               className={"w-full h-full grid grid-cols-1 grid-rows-1 bg-slate-800 overflow-hidden text-slate-50 rounded-2xl justify-between"}>
 
-                              <div style={{gridRow:1, gridColumn:1, backgroundImage: "url('assets/backgrounds/plus.svg')", backgroundSize: "5%"}}
+                              <div style={{gridRow:1, gridColumn:1, backgroundImage: "url('https://res.cloudinary.com/db2frz3sv/image/upload/v1726579887/plus_e5a2no.svg')", backgroundSize: "5%"}}
                               className={"w-full h-full opacity-15"}
                               />
 
