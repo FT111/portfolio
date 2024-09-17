@@ -3,8 +3,6 @@ import Section from "@/components/section";
 import Page from "@/components/page";
 import AutoCarousel from "@/components/carousel";
 import React from "react";
-import ScrollCard from "@/components/scrollCard";
-import Image from "next/image";
 import ProjectCard from "@/components/projectCard";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
