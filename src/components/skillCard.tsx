@@ -37,10 +37,11 @@ export default function SkillCard({ skillTitle, skillColour, skillDescription, i
 			<ScrollCard onClick={() => setIsOpen(!isOpen)}
 						className={clsx(
 							"h-[10rem] cursor-pointer lg:grow-0 grow basis-1/3 md:basis-1/4 lg:basis-1/5",
-							"transition-all text-white rounded-2xl shadow-sm hover:shadow-md outline outline-[3px]",
+							"transition-all text-white rounded-2xl outline outline-[3px]",
 							"hover:outline-[5px] outline-slate-300",
 							"hover:brightness-110",
 							"hover:outline-accent/50",
+							"shadow-md",
 							skillColour
 						)}>
 

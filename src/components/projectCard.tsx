@@ -17,7 +17,7 @@ interface Props {
 export default function ProjectCard({ children, ...props }: Props) {
 
 	return (
-		<ScrollCard threshold={0.2} className={"bg-slate-50 border-slate-100 border-2 w-full md:h-[30rem] min-h-[30rem] text-slate-900 rounded-2xl flex md:flex-row flex-col"}>
+		<ScrollCard threshold={0.2} className={"bg-slate-50 border-slate-100 shadow-md border-0 w-full md:h-[30rem] min-h-[30rem] text-slate-900 rounded-2xl flex md:flex-row flex-col"}>
 			{/* Stack and image section */}
 			<div className={`${props.alternate ? 'md:order-1' : ''} flex flex-col md:flex-row rounded-2xl basis-1/2`}>
 				{props.imageHREF && (
@@ -38,7 +38,7 @@ export default function ProjectCard({ children, ...props }: Props) {
 					{props.stack && (
 						props.stack.map((stack, i) => (
 							<div key={i} className={`flex w-20 h-auto gap-3 md:group-hover:w-56 items-center p-4 transition-all ${props.alternate ? 'flex-row' : 'flex-row-reverse'}  `}>
-								<Image className={" md:h-11 h-auto md:w-max w-24  "} src={stack.icon} alt={stack.title + ' icon'} width={50} height={50} />
+								<Image className={"  w-11  aspect-square  "} src={stack.icon} alt={stack.title} width={50} height={50} />
 
 								<p className={"hidden md:block opacity-0  group-hover:translate-x-0 group-hover:opacity-100" +
 									` truncate text-slate-950 transition-all ${props.alternate ? '-translate-x-7' : 'translate-x-7'}`}>{stack.title}</p>
