@@ -5,7 +5,7 @@ interface Props {
 	children: React.ReactNode;
 	className?: string;
 	style?: React.CSSProperties;
-	threshold?: number;
+	threshold: number;
 	onClick?: () => void;
 
 }
@@ -42,7 +42,7 @@ export default function ScrollCard({ children, ...props }: Props) {
 				observer.unobserve(currentElement);
 			}
 		};
-	}, []);
+	}, [thresholdVal]);
 
 	const invisibleClasses = ' opacity-0 blur-sm -translate-y-10 ';
 	const visibleClasses = ' opacity-100 blur-none translate-y-0 ';
@@ -54,7 +54,7 @@ export default function ScrollCard({ children, ...props }: Props) {
 	}
 
 	return (
-		<div ref={elementRef} style={props.style} className={classes} onClick={() => {props.onClick()}}>
+		<div ref={elementRef} style={props.style} className={classes} onClick={() => { props.onClick ?  props.onClick() : {}}}>
 			{children}
 		</div>
 	);
