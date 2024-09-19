@@ -5,7 +5,7 @@ interface Props {
 	children: React.ReactNode;
 	className?: string;
 	style?: React.CSSProperties;
-	threshold: number;
+	threshold?: number;
 	onClick?: () => void;
 
 }
