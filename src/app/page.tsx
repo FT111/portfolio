@@ -4,7 +4,7 @@ import Page from "@/components/page";
 import AutoCarousel from "@/components/carousel";
 import React from "react";
 import ProjectCard from "@/components/projectCard";
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import SkillCard from "@/components/skillCard";
 
@@ -155,7 +155,6 @@ export default function Home() {
         "https://res.cloudinary.com/db2frz3sv/image/upload/v1726332712/BookingSystemblur_e8vom9.png",
     },
   ];
-
   return (
     <Page>
       <Section className={"flex-col z-10"}>
