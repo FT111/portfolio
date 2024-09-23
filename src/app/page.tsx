@@ -4,9 +4,9 @@ import Page from "@/components/page";
 import AutoCarousel from "@/components/carousel";
 import React from "react";
 import ProjectCard from "@/components/projectCard";
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import SkillCard from "@/components/skillCard";
+import SkillGrid from "@/components/skillGrid";
 
 export default function Home() {
   const skills = [
@@ -155,7 +155,6 @@ export default function Home() {
         "https://res.cloudinary.com/db2frz3sv/image/upload/v1726332712/BookingSystemblur_e8vom9.png",
     },
   ];
-
   return (
     <Page>
       <Section className={"flex-col z-10"}>
@@ -267,15 +266,7 @@ export default function Home() {
               "flex flex-row flex-wrap gap-4 md:gap-8 transition-all transform-gpu duration-200"
             }
           >
-            {skills.map((skill, i) => (
-              <SkillCard
-                key={i}
-                icon={skill.icon}
-                skillTitle={skill.title}
-                skillColour={skill.colour}
-                skillDescription={skill.description}
-              />
-            ))}
+            <SkillGrid skills={skills} />
           </div>
         </Section>
 

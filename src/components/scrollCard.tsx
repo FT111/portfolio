@@ -1,16 +1,17 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
   className?: string;
-  style?: React.CSSProperties;
   threshold?: number;
   onClick?: () => void;
+  id?: string;
+  style?: React.CSSProperties;
 }
 
-export default function ScrollCard({ children, ...props }: Props) {
+export default function ScrollCard({ children, onClick, ...props }: Props) {
   const [isVisible, setIsVisible] = useState(false); // State to track visibility
-  const elementRef = useRef(null); // Ref for the target element
+  const elementRef = useRef(null); // Reference to the target element
 
   const thresholdVal = props.threshold || 0.5; // Default threshold value
 
@@ -55,11 +56,9 @@ export default function ScrollCard({ children, ...props }: Props) {
   return (
     <div
       ref={elementRef}
-      style={props.style}
       className={classes}
-      onClick={() => {
-        props.onClick ? props.onClick() : {};
-      }}
+      onClick={onClick}
+      id={props && props.id}
     >
       {children}
     </div>
