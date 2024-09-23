@@ -60,7 +60,7 @@ export default function SkillCard({
       fade: true,
       absolute: true,
     });
-  }, [isExpanded]);
+  }, [baseID, expandedID, isExpanded]);
 
   const toggleExpand = () => {
     if (isExpanded) {

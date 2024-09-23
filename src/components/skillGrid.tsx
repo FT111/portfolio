@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SkillCard from "@/components/skillCard";
 
 export default function SkillGrid({ skills }) {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
+  useEffect(() => {
+    console.log("Initial expandedCard state:", expandedCard);
+  }, []);
+
   const handleExpand = (title: string) => {
     setExpandedCard((prev) => (prev === title ? null : title));
+    console.log("Toggled expandedCard state:", expandedCard);
   };
 
   return (
