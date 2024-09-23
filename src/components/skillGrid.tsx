@@ -4,6 +4,10 @@ import SkillCard from "@/components/skillCard";
 export default function SkillGrid({ skills }) {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
+  const handleExpand = (title: string) => {
+    setExpandedCard((prev) => (prev === title ? null : title));
+  };
+
   return (
     <>
       {skills.map(
@@ -23,7 +27,7 @@ export default function SkillGrid({ skills }) {
             skillDescription={skill.description}
             icon={skill.icon}
             isExpanded={expandedCard === skill.title}
-            onExpand={() => setExpandedCard(skill.title)}
+            onExpand={() => handleExpand(skill.title)}
             onCollapse={() => setExpandedCard(null)}
           />
         ),
