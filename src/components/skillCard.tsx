@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import ScrollCard from "@/components/scrollCard";
 import React, { useEffect } from "react";
@@ -52,6 +53,8 @@ export default function SkillCard({
 
     baseREF.current.classList.toggle("hidden");
     expandedREF.current.classList.toggle("hidden");
+
+    console.log("flipping", expandedID, baseID);
 
     Flip.from(state, {
       duration: 0.16,
