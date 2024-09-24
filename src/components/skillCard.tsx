@@ -63,11 +63,11 @@ export default function SkillCard({
   };
 
   useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error TS is wrong
     if (!document.readyState === "complete") return;
 
     flip();
-  }, [isExpanded]);
+  }, [isExpanded, flip]);
 
   const toggleExpand = () => {
     if (isExpanded) {
