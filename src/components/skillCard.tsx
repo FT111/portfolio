@@ -63,7 +63,8 @@ export default function SkillCard({
   };
 
   useEffect(() => {
-    if (!expandedREF.current || !baseREF.current) return;
+    // @ts-ignore
+    if (!document.readyState === "complete") return;
 
     flip();
   }, [isExpanded]);
