@@ -68,6 +68,7 @@ export default function Home() {
 		{
 			title: "Portfolio",
 			description: "A portfolio website to showcase my projects",
+			githubURL: "https://github.com/FT111/portfolio",
 			stack: [
 				{
 					title: "React",
@@ -98,6 +99,7 @@ export default function Home() {
 		{
 			title: "eCommerce",
 			description: "An eCommerce website for selling products",
+			githubURL: "https://github.com/FT111/OnlineStoreBackend",
 			stack: [
 				{
 					title: "Svelte",
@@ -132,6 +134,7 @@ export default function Home() {
 		{
 			title: "Booking System",
 			description: "An internal booking system for a cinema",
+			githubURL: "https://github.com/FT111/bookingSystem",
 			stack: [
 				{
 					title: "Python",
@@ -173,7 +176,7 @@ export default function Home() {
 					</span>
 				</h1>
 
-				<div className={"px-8"}>
+				<div className={"sm:px-8"}>
 					<div
 						className={
 							"bg-slate-200 h-[28rem] py-3 flex flex-row justify-center w-full rounded-2xl " +
@@ -224,7 +227,11 @@ export default function Home() {
 										/>
 									</svg>
 
-									<div className={"flex flex-row justify-between items-end"}>
+									<div
+										className={
+											"flex sm:flex-row flex-col justify-between gap-4 sm:items-end"
+										}
+									>
 										<p className={"text-6xl font-bold"}>Github</p>
 										<Link href={"https://github.com/FT111"}>
 											<Button
@@ -232,7 +239,7 @@ export default function Home() {
 												variant={"outline"}
 												className={"bg-slate-700/10 backdrop-blur"}
 											>
-												Check it out
+												Visit
 											</Button>
 										</Link>
 									</div>
@@ -298,10 +305,15 @@ export default function Home() {
 					{projects.map((project, i) => (
 						<ProjectCard
 							key={i}
-							imageHREF={project.image}
-							blurredHREF={project.blurred}
-							stack={project.stack}
 							alternate={i % 2 === 0}
+							project={{
+								title: project.title,
+								description: project.description,
+								githubURL: project.githubURL,
+								stack: project.stack,
+								imageHREF: project.image,
+								blurredHREF: project.blurred,
+							}}
 						>
 							<h3 className={"text-2xl font-semibold"}>{project.title}</h3>
 							<p className={"text-lg"}>{project.description}</p>
