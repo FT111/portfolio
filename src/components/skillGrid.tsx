@@ -2,13 +2,26 @@ import React, { useEffect, useState } from "react";
 import SkillCard from "@/components/skillCard";
 
 export default function SkillGrid({ skills }) {
-	const [expandedCard, setExpandedCard] = useState<string | null>(null);
+	const [expandedCard, setExpandedCard] = useState<string | null | boolean>(
+		null,
+	);
 	const [cardStates, setCardStates] = useState<{ [key: string]: boolean }>({});
+
+	const refs = skills.reduce(
+		(
+			acc: { [key: string]: React.RefObject<HTMLDivElement> },
+			skill: { title: string },
+		) => {
+			acc[skill.title] = React.createRef();
+			return acc;
+		},
+		{},
+	);
 
 	useEffect(() => {
 		const initialCardStates = skills.reduce(
 			(acc: { [key: string]: boolean }, skill: { title: string }) => {
-				acc[skill.title] = false;
+				acc[skill.title] = null;
 				return acc;
 			},
 			{},
@@ -18,41 +31,34 @@ export default function SkillGrid({ skills }) {
 
 	// Handle the click event for the card
 	const handleClick = (title: string) => {
-		console.log(`Clicked ${title}!!!!`);
-
 		// Toggle the card state
 		setCardStates((prevCardStates) => ({
 			...prevCardStates,
 			[title]: !prevCardStates[title],
 		}));
+		refs[title].current.flip();
 
 		// If the card is already expanded, collapse it
 		if (expandedCard !== null && expandedCard !== title) {
 			setCardStates((prevCardStates) => ({
 				...prevCardStates,
+				// @ts-expect-error ts is wrong
 				[expandedCard]: false,
 			}));
-			console.log(`Collapsing card: ${expandedCard}`);
+			if (typeof expandedCard === "string") {
+				refs[expandedCard].current.flip();
+			}
 		}
 
 		// Mark as expanded
 		setExpandedCard((prevExpandedCard) => {
 			if (prevExpandedCard === null || prevExpandedCard !== title) {
-				console.log(`Expanding card: ${title}`);
 				return title;
 			} else {
-				console.log(`Set expanded card to null`);
 				return null;
 			}
 		});
 	};
-
-	// Log the state changes
-	useEffect(() => {
-		console.info("Current card states: ", cardStates);
-		console.log("Expanded card: ", expandedCard);
-		console.log("------------------------------------------------------");
-	}, [cardStates, expandedCard]);
 
 	return (
 		<>
@@ -75,6 +81,7 @@ export default function SkillGrid({ skills }) {
 						isExpanded={cardStates[skill.title]}
 						clickHandler={() => handleClick(skill.title)}
 						expandedTitle={expandedCard}
+						ref={refs[skill.title]}
 					/>
 				),
 			)}
