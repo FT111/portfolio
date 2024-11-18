@@ -8,14 +8,7 @@ import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
-// import {
-// 	Dialog,
-// 	DialogContent,
-// 	DialogDescription,
-// 	DialogTrigger,
-// 	DialogHeader,
-// 	DialogTitle,
-// } from "@/components/ui/dialog";
+import Markdown from "react-markdown";
 
 gsap.registerPlugin(useGSAP, Flip, ScrollTrigger, Observer);
 interface SkillCardProps {
@@ -26,6 +19,7 @@ interface SkillCardProps {
 	isExpanded: boolean;
 	expandedTitle: string | boolean;
 	clickHandler: () => void;
+	index: number;
 }
 
 export const SkillCard = forwardRef(
@@ -37,6 +31,7 @@ export const SkillCard = forwardRef(
 			icon,
 			isExpanded,
 			clickHandler,
+			index,
 		}: SkillCardProps,
 		ref,
 	) => {
@@ -80,7 +75,8 @@ export const SkillCard = forwardRef(
 						onClick={clickHandler}
 						id={expandedID}
 						data-flip-id={expandedID}
-						className={`expandedCard absolute hidden w-[140%] h-[130%] -translate-x-12 translate-y-20`}
+						className={`expandedCard absolute hidden 
+						md:w-[140%] w-[120%] md:h-[130%]  md:-translate-x-12 translate-y-20 ${index % 2 === 0 ? "" : "-translate-x-8"} `}
 					>
 						<div
 							className={clsx(`bg-slate-50 select-none cursor-pointer group w-full h-full rounded-2xl shadow-2xl shadow-slate-900/50 transition-all
@@ -116,7 +112,9 @@ export const SkillCard = forwardRef(
 							>
 								{skillTitle}
 							</h3>
-							<p className={"p-4 select-none"}>{skillDescription}</p>
+							<Markdown className={"p-4 select-none"}>
+								{skillDescription}
+							</Markdown>
 						</div>
 					</div>
 
@@ -126,7 +124,7 @@ export const SkillCard = forwardRef(
 						id={baseID}
 						data-flip-id={expandedID}
 						className={clsx(
-							"h-[10rem] cursor-pointer",
+							"h-[12rem] md:h-[10rem] cursor-pointer",
 							"transition-all text-white rounded-2xl outline outline-[3px]",
 							"hover:outline-[5px] outline-slate-300",
 							"hover:brightness-110",
@@ -165,9 +163,9 @@ export const SkillCard = forwardRef(
 								<Image src={icon} alt={icon + " icon"} width={70} height={70} />
 							)}
 						</div>
-						<p className={"hidden blur-lg"} data-flip-id={expandedID}>
+						<div className={"hidden blur-lg "} data-flip-id={expandedID}>
 							{skillDescription}
-						</p>
+						</div>
 					</div>
 				</div>
 			</ScrollCard>

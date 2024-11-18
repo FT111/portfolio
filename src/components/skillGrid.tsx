@@ -70,7 +70,7 @@ export default function SkillGrid({ skills }) {
 						description: string;
 						icon: string;
 					},
-					index: React.Key,
+					index: number,
 				) => (
 					<SkillCard
 						key={index}
@@ -82,6 +82,7 @@ export default function SkillGrid({ skills }) {
 						clickHandler={() => handleClick(skill.title)}
 						expandedTitle={expandedCard}
 						ref={refs[skill.title]}
+						index={index}
 					/>
 				),
 			)}
