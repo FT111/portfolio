@@ -9,42 +9,50 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import SkillGrid from "@/components/skillGrid";
 
-export default function Home() {
+export default function App() {
 	const skills = [
 		{
 			title: "Python",
 			description:
-				"Python is a backend programming language for writing logic and web APIs",
+				" Python is a versatile programming language for writing logic and web APIs. \n\n It has been my go-to backend language for years and the one I have the most experience in.",
 			colour: "bg-cyan-700",
 			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/PythonIcon_oh2hs2.png",
 		},
 		{
-			title: "React",
-			description: "A JavaScript library for building user interfaces",
-			colour: "bg-blue-500",
-			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/ReactIcon_n8rlzk.svg",
-		},
-		{
 			title: "Svelte",
-			description: "Cybernetically enhanced web apps",
+			description:
+				"A minimal Javascript component framework. \n\n " +
+				"My choice for building web apps due to its simplicity and speed. It abstracts away some complexities and boilerplate without sacrificing power.",
 			colour: "bg-orange-600",
 			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg",
 		},
 		{
+			title: "React",
+			description:
+				"A JavaScript framework for building web apps. \n\n " +
+				"I have used it for a small number of projects, but have a good understanding of the core concepts.",
+			colour: "bg-blue-500",
+			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/ReactIcon_n8rlzk.svg",
+		},
+		{
 			title: "SQL and relational databases",
-			description: "SQL and relational databases.",
+			description:
+				"I have previously used MySQL, SQL Server and SQLite. \n\n " +
+				"I have limited experience with ORMs, having used some SQLAlchemy.",
 			colour: "bg-slate-800",
 		},
 		{
 			title: "SvelteKit",
-			description: "The official Svelte framework",
+			description:
+				"A meta-framework for building web apps with Svelte. \n\n " + "",
 			colour: "bg-orange-500",
 			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg",
 		},
 		{
 			title: "FastAPI",
 			description:
-				"FastAPI is a modern, high-performance, web framework for building APIs with Python.",
+				"FastAPI is a high-performance, web framework for building APIs with Python. \n\n" +
+				"I use it for its strong integration with Pyantic models and speed.",
 			colour: "bg-teal-700",
 			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FastAPIIcon_rl3qx9.svg",
 		},
@@ -164,7 +172,7 @@ export default function Home() {
 			<Section className={"flex-col z-10"}>
 				<h1
 					className={
-						"md:text-6xl text-5xl tracking-tight font-bold text-slate-900 " +
+						"md:text-6xl text-5xl sm:tracking-tight tracking-tighter font-bold text-slate-900 " +
 						"max-w-full md:leading-[4rem]"
 					}
 				>
