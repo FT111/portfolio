@@ -49,7 +49,7 @@ export default function Navbar() {
 		>
 			<div className="pl-8">
 				<Link href="/">
-					<p className="text-2xl font-bold">Frederick Taylor</p>
+					<p className="text-2xl font-bold hidden md:block">Frederick Taylor</p>
 				</Link>
 			</div>
 			<div className="flex flex-row gap-3 pr-8">
