@@ -14,6 +14,7 @@ interface Props {
 export default function ProjectCard({ children, ...props }: Props) {
 	return (
 		<ScrollCard
+			id={props.project.title}
 			threshold={0.2}
 			className={
 				"bg-slate-50 border-slate-600 shadow-md border-0 w-full md:h-[30rem] min-h-[30rem] text-slate-900 rounded-2xl flex md:flex-row flex-col"

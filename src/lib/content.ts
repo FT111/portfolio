@@ -40,7 +40,7 @@ export const skills = [
 		title: "FastAPI",
 		description:
 			"FastAPI is a high-performance, web framework for building APIs with Python. \n\n" +
-			"I use it for its strong integration with Pyantic models and speed.",
+			"I've recently begun using it for its strong integration with Pyantic models and speed.",
 		colour: "bg-teal-700",
 		icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FastAPIIcon_rl3qx9.svg",
 	},
@@ -139,7 +139,7 @@ export const projects = [
 		description:
 			"A booking system for a fictional cinema. \n\n" +
 			"It is designed for cinema staff to book tickets for customers. \n\n" +
-			"Staff can manage bookings, showings, along with viewing statistics and graphical seat maps. \n\n",
+			"Staff can manage bookings and showings, along with viewing statistics and graphical seat maps. \n\n",
 		githubURL: "https://github.com/FT111/bookingSystem",
 		stack: [
 			{

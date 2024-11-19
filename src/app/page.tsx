@@ -11,6 +11,7 @@ import SkillGrid from "@/components/skillGrid";
 
 import { projects, skills } from "@/lib/content";
 import Markdown from "react-markdown";
+import Image from "next/image";
 
 export default function App() {
 	return (
@@ -38,13 +39,58 @@ export default function App() {
 						}
 					>
 						<AutoCarousel>
+							{/* Featured Project card */}
 							<div
 								className={
-									"w-full h-full flex flex-col justify-between bg-sky-800 text-slate-50 rounded-2xl p-8"
+									"w-full h-full flex flex-col justify-between bg-sky-900 text-slate-50 rounded-2xl p-14 py-10"
 								}
 							>
-								<div className={"flex flex-row justify-between"}>
-									<p className={"text-5xl font-bold"}>Latest project</p>
+								<div className={"flex flex-col justify-between gap-3 h-full"}>
+									<div className={"flex flex-row justify-between gap-3"}>
+										<p className={"text-5xl font-bold"}>Featured project</p>
+
+										<Image
+											src={
+												"https://res.cloudinary.com/db2frz3sv/image/upload/v1732058552/Screenshot_2024-11-19_at_23.20.10_lk3qnv.png"
+											}
+											width={300}
+											height={100}
+											className={
+												"rounded-md shadow-md w-5/12 max-h-full sm:block hidden"
+											}
+											alt={"E-Commerce listings search webpage."}
+										/>
+									</div>
+									<div
+										className={
+											"flex flex-col sm:flex-row gap-3 justify-between w-full"
+										}
+									>
+										<div className={"flex flex-col gap-1"}>
+											<p className={"text-3xl font-semibold"}>
+												E-Commerce Platform
+											</p>
+											<p>
+												A user-focused eCommerce marketplace built with Svelte
+												and FastAPI
+											</p>
+										</div>
+
+										<div className={"flex flex-row gap-2"}>
+											<Link href={"#eCommerce Web App"}>
+												<Button size={"lg"} variant={"outline"}>
+													More info
+												</Button>
+											</Link>
+											<Link
+												href={"https://github.com/FT111/OnlineStoreBackend"}
+											>
+												<Button size={"lg"} variant={"secondary"}>
+													Repository
+												</Button>
+											</Link>
+										</div>
+									</div>
 								</div>
 							</div>
 
