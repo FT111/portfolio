@@ -61,7 +61,7 @@ export default function ProjectCard({ children, ...props }: Props) {
 				{/* Stack column */}
 				<div
 					className={`flex flex-row md:flex-col overflow-x-scroll md:overflow-y-scroll md:overflow-x-hidden bg-slate-100 order-0 ${props.alternate ? "md:order-1 " : "items-end"}
-								group transition-all duration-250 transform-gpu`}
+								group transition-all duration-200 transform-gpu`}
 				>
 					<p
 						className={
@@ -98,7 +98,7 @@ export default function ProjectCard({ children, ...props }: Props) {
 			</div>
 
 			<div className={"basis-1/2 p-5 flex flex-col justify-between"}>
-				<div className={`p-5 text-slate-900 flex flex-col h-full `}>
+				<div className={`p-5 text-slate-900 flex flex-col h-full gap-3.5`}>
 					{children}
 				</div>
 				{/*	Github URL */}
@@ -107,7 +107,7 @@ export default function ProjectCard({ children, ...props }: Props) {
 					className={"justify-self-end self-end"}
 				>
 					<svg
-						className={"scale-75 opacity-90"}
+						className={"scale-75"}
 						width="98"
 						height="96"
 						xmlns="http://www.w3.org/2000/svg"

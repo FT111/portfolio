@@ -9,164 +9,10 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import SkillGrid from "@/components/skillGrid";
 
-export default function App() {
-	const skills = [
-		{
-			title: "Python",
-			description:
-				" Python is a versatile programming language for writing logic and web APIs. \n\n It has been my go-to backend language for years and the one I have the most experience in.",
-			colour: "bg-cyan-700",
-			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/PythonIcon_oh2hs2.png",
-		},
-		{
-			title: "Svelte",
-			description:
-				"A minimal Javascript component framework. \n\n " +
-				"My choice for building web apps due to its simplicity and speed. It abstracts away some complexities and boilerplate without sacrificing power.",
-			colour: "bg-orange-600",
-			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg",
-		},
-		{
-			title: "React",
-			description:
-				"A JavaScript framework for building web apps. \n\n " +
-				"I have used it for a small number of projects, but have a good understanding of the core concepts.",
-			colour: "bg-blue-500",
-			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/ReactIcon_n8rlzk.svg",
-		},
-		{
-			title: "SQL and relational databases",
-			description:
-				"I have previously used MySQL, SQL Server and SQLite. \n\n " +
-				"I have limited experience with ORMs, having used some SQLAlchemy.",
-			colour: "bg-slate-800",
-		},
-		{
-			title: "SvelteKit",
-			description:
-				"A meta-framework for building web apps with Svelte. \n\n " + "",
-			colour: "bg-orange-500",
-			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg",
-		},
-		{
-			title: "FastAPI",
-			description:
-				"FastAPI is a high-performance, web framework for building APIs with Python. \n\n" +
-				"I use it for its strong integration with Pyantic models and speed.",
-			colour: "bg-teal-700",
-			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FastAPIIcon_rl3qx9.svg",
-		},
-		{
-			title: "Tailwind CSS",
-			description:
-				"A utility-first CSS framework for rapidly building custom designs",
-			colour: "bg-cyan-800",
-			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg",
-		},
-		{
-			title: "TypeScript",
-			description:
-				"TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.",
-			colour: "bg-sky-700",
-			icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/TypeScriptIcon_qtqu0r.png",
-		},
-	];
+import { projects, skills } from "@/lib/content";
+import Markdown from "react-markdown";
 
-	const projects = [
-		{
-			title: "Portfolio",
-			description: "A portfolio website to showcase my projects",
-			githubURL: "https://github.com/FT111/portfolio",
-			stack: [
-				{
-					title: "React",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/ReactIcon_n8rlzk.svg",
-				},
-				{
-					title: "Next.js",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/NextJSIcon_axledu.png",
-				},
-				{
-					title: "TypeScript",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/TypeScriptIcon_qtqu0r.png",
-				},
-				{
-					title: "Vercel",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726333899/Vercel_logo_oobok8.svg",
-				},
-				{
-					title: "Tailwind CSS",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg",
-				},
-			],
-			image:
-				"https://res.cloudinary.com/db2frz3sv/image/upload/v1726332716/portfolio_afx1dx.png",
-			blurred:
-				"https://res.cloudinary.com/db2frz3sv/image/upload/v1726332717/portfolioblur_mdlwo7.png",
-		},
-		{
-			title: "eCommerce",
-			description: "An eCommerce website for selling products",
-			githubURL: "https://github.com/FT111/OnlineStoreBackend",
-			stack: [
-				{
-					title: "Svelte",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg",
-				},
-				{
-					title: "SvelteKit",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331283/SvelteIcon_nydju3.svg",
-				},
-				{
-					title: "Python",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/PythonIcon_oh2hs2.png",
-				},
-				{
-					title: "FastAPI",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FastAPIIcon_rl3qx9.svg",
-				},
-				{
-					title: "Tailwind CSS",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg",
-				},
-				{
-					title: "SQLite",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/SQLiteIcon_fysdul.svg",
-				},
-			],
-			image:
-				"https://res.cloudinary.com/db2frz3sv/image/upload/v1726332714/eCommerce_r63kqs.png",
-			blurred:
-				"https://res.cloudinary.com/db2frz3sv/image/upload/v1726332715/eCommerceblur_qvqk9z.png",
-		},
-		{
-			title: "Booking System",
-			description: "An internal booking system for a cinema",
-			githubURL: "https://github.com/FT111/bookingSystem",
-			stack: [
-				{
-					title: "Python",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/PythonIcon_oh2hs2.png",
-				},
-				{
-					title: "Flask",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/FlaskIcon_j7huim.svg",
-				},
-				{
-					title: "Tailwind CSS",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg",
-				},
-				{
-					title: "AWS RDS",
-					icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331493/AWS_icon_shtjnu.png",
-				},
-			],
-			image:
-				"https://res.cloudinary.com/db2frz3sv/image/upload/v1726332713/BookingSystem_e1asmd.png",
-			blurred:
-				"https://res.cloudinary.com/db2frz3sv/image/upload/v1726332712/BookingSystemblur_e8vom9.png",
-		},
-	];
+export default function App() {
 	return (
 		<Page>
 			<Section className={"flex-col z-10"}>
@@ -305,10 +151,11 @@ export default function App() {
 			<Section
 				id={"projects"}
 				className={
-					"flex-col alternateNav bg-slate-800 py-32 text-slate-50 pt-16 "
+					"flex-col alternateNav bg-slate-800 py-32 text-slate-50 pt-16 gap-8 "
 				}
 			>
 				<h2 className={"text-4xl font-semibold"}>Solo Projects</h2>
+				<p>The projects below are either personal projects or for education.</p>
 				<div className={"flex flex-col gap-24"}>
 					{projects.map((project, i) => (
 						<ProjectCard
@@ -324,7 +171,9 @@ export default function App() {
 							}}
 						>
 							<h3 className={"text-2xl font-semibold"}>{project.title}</h3>
-							<p className={"text-lg"}>{project.description}</p>
+							<Markdown className={"text-lg leading-relaxed"}>
+								{project.description}
+							</Markdown>
 						</ProjectCard>
 					))}
 				</div>
