@@ -74,10 +74,7 @@ export default function SkillGrid({ skills }) {
 				) => (
 					<SkillCard
 						key={index}
-						skillTitle={skill.title}
-						skillColour={skill.colour}
-						skillDescription={skill.description}
-						icon={skill.icon}
+						skill={skill}
 						isExpanded={cardStates[skill.title]}
 						clickHandler={() => handleClick(skill.title)}
 						expandedTitle={expandedCard}
