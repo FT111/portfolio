@@ -42,53 +42,72 @@ export default function App() {
 							{/* Featured Project card */}
 							<div
 								className={
-									"w-full h-full flex flex-col justify-between bg-sky-900 text-slate-50 rounded-2xl p-14 py-10"
+									"grid grid-cols-1 h-full " +
+									"grid-rows-1 bg-sky-900 text-slate-50 rounded-2xl"
 								}
 							>
-								<div className={"flex flex-col justify-between gap-3 h-full"}>
-									<div className={"flex flex-row justify-between gap-3"}>
-										<p className={"text-5xl font-bold"}>Featured project</p>
+								<div
+									style={{
+										gridRow: 1,
+										gridColumn: 1,
+										backgroundImage:
+											"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.16'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");",
+										backgroundSize: "3%",
+									}}
+									className={"w-full h-full opacity-20 order-0"}
+								/>
 
-										<Image
-											src={
-												"https://res.cloudinary.com/db2frz3sv/image/upload/v1732058552/Screenshot_2024-11-19_at_23.20.10_lk3qnv.png"
-											}
-											width={300}
-											height={100}
-											className={
-												"rounded-md shadow-md w-5/12 max-h-full sm:block hidden"
-											}
-											alt={"E-Commerce listings search webpage."}
-										/>
-									</div>
-									<div
-										className={
-											"flex flex-col sm:flex-row gap-3 justify-between w-full"
-										}
-									>
-										<div className={"flex flex-col gap-1"}>
-											<p className={"text-3xl font-semibold"}>
-												E-Commerce Platform
-											</p>
-											<p>
-												A user-focused eCommerce marketplace built with Svelte
-												and FastAPI
-											</p>
+								<div
+									style={{ gridRow: 1, gridColumn: 1 }}
+									className={
+										"w-full h-full flex flex-col justify-between p-14 py-10 z-10"
+									}
+								>
+									<div className={"flex flex-col justify-between gap-3 h-full"}>
+										<div className={"flex flex-row justify-between gap-3"}>
+											<p className={"text-5xl font-bold"}>Featured project</p>
+
+											<Image
+												src={
+													"https://res.cloudinary.com/db2frz3sv/image/upload/v1732058552/Screenshot_2024-11-19_at_23.20.10_lk3qnv.png"
+												}
+												width={300}
+												height={100}
+												className={
+													"rounded-md shadow-md w-5/12 max-h-full sm:block hidden"
+												}
+												alt={"E-Commerce listings search webpage."}
+											/>
 										</div>
+										<div
+											className={
+												"flex flex-col sm:flex-row gap-3 justify-between w-full"
+											}
+										>
+											<div className={"flex flex-col gap-1"}>
+												<p className={"text-3xl font-semibold"}>
+													E-Commerce Platform
+												</p>
+												<p>
+													A user-focused eCommerce marketplace built with Svelte
+													and FastAPI
+												</p>
+											</div>
 
-										<div className={"flex flex-row gap-2"}>
-											<Link href={"#eCommerce Web App"}>
-												<Button size={"lg"} variant={"outline"}>
-													More info
-												</Button>
-											</Link>
-											<Link
-												href={"https://github.com/FT111/OnlineStoreBackend"}
-											>
-												<Button size={"lg"} variant={"secondary"}>
-													Repository
-												</Button>
-											</Link>
+											<div className={"flex flex-row gap-2"}>
+												<Link href={"#eCommerce Web App"}>
+													<Button size={"lg"} variant={"outline"}>
+														More info
+													</Button>
+												</Link>
+												<Link
+													href={"https://github.com/FT111/OnlineStoreBackend"}
+												>
+													<Button size={"lg"} variant={"secondary"}>
+														Repository
+													</Button>
+												</Link>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -144,10 +163,6 @@ export default function App() {
 										</Link>
 									</div>
 								</div>
-							</div>
-
-							<div className={"w-full h-full bg-white rounded-2xl p-4"}>
-								test
 							</div>
 						</AutoCarousel>
 					</div>

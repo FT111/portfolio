@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SkillCard from "@/components/skillCard";
 
-export default function SkillGrid({ skills }) {
+export default function SkillGrid({ skills }: { skills }) {
 	const [expandedCard, setExpandedCard] = useState<string | null | boolean>(
 		null,
 	);

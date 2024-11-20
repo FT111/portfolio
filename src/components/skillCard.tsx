@@ -42,7 +42,7 @@ export const SkillCard = forwardRef((props: SkillCardProps, ref) => {
 		expandedREF.current.classList.toggle("hidden");
 
 		Flip.from(state, {
-			duration: 0.2,
+			duration: 0.125,
 			ease: "power2.inOut",
 			zIndex: 40,
 			fade: true,
