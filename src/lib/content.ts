@@ -47,7 +47,8 @@ export const skills = [
 	{
 		title: "Tailwind CSS",
 		description:
-			"A utility-first CSS framework for rapidly building custom designs",
+			"I have used Tailwind to style most sites I have built. \n\n " +
+			"It is a great CSS utility framework that for rapid development and avoiding stylesheet mess.",
 		colour: "bg-cyan-800",
 		icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/TailwindIcon_xtqpqb.svg",
 	},
