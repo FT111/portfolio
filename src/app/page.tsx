@@ -12,6 +12,7 @@ import SkillGrid from "@/components/skillGrid";
 import { projects, skills } from "@/lib/content";
 import Markdown from "react-markdown";
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
 
 export default function App() {
 	return (
@@ -85,9 +86,14 @@ export default function App() {
 											}
 										>
 											<div className={"flex flex-col gap-1"}>
-												<p className={"text-3xl font-semibold"}>
+												<div
+													className={
+														"text-3xl font-semibold flex flex-row items-center gap-2.5"
+													}
+												>
 													E-Commerce Platform
-												</p>
+													<Badge variant={"outline"}>In Development</Badge>
+												</div>
 												<p>
 													A user-focused eCommerce marketplace built with Svelte
 													and FastAPI
@@ -96,14 +102,18 @@ export default function App() {
 
 											<div className={"flex flex-row gap-2"}>
 												<Link href={"#eCommerce Web App"}>
-													<Button size={"lg"} variant={"outline"}>
+													<Button size={"lg"} variant={"secondary"}>
 														More info
 													</Button>
 												</Link>
 												<Link
 													href={"https://github.com/FT111/OnlineStoreBackend"}
 												>
-													<Button size={"lg"} variant={"secondary"}>
+													<Button
+														size={"lg"}
+														variant={"default"}
+														className={"bg-sky-950"}
+													>
 														Repository
 													</Button>
 												</Link>
