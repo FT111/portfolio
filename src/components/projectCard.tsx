@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import ScrollCard from "@/components/scrollCard";
 import { Project } from "@/lib/types";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Object of stack title and an icon SVG
 
@@ -12,6 +13,19 @@ interface Props {
 }
 
 export default function ProjectCard({ children, ...props }: Props) {
+	// Check if stack is being hovered
+	const [isHovered, setIsHovered] = React.useState(false);
+
+	// Handle the stack hover event
+	const handleStackHover = () => {
+		setIsHovered(!isHovered);
+	};
+
+	const chevronProps =
+		"sm:inline hidden " +
+		"transition-all duration-150 " +
+		`${isHovered ? "opacity-0" : ""} `;
+
 	return (
 		<ScrollCard
 			id={props.project.title}
@@ -63,14 +77,31 @@ export default function ProjectCard({ children, ...props }: Props) {
 				<div
 					className={`flex flex-row md:flex-col overflow-x-scroll md:overflow-y-scroll md:overflow-x-hidden bg-slate-100 order-0 ${props.alternate ? "md:order-1 " : "items-end"}
 								group transition-all duration-200 transform-gpu`}
+					onMouseEnter={handleStackHover}
+					onMouseLeave={handleStackHover}
 				>
 					<p
 						className={
-							"p-3 text-xl font-semibold bg-slate-200/50 backdrop-blur-xl sticky top-0 md:w-full text-center  z-20 text-muted-foreground"
+							"p-3 px-1.5 text-xl font-semibold bg-slate-200/50 backdrop-blur-xl sticky top-0 md:w-full text-center" +
+							"  z-20 text-muted-foreground flex flex-row items-center justify-center"
 						}
 					>
+						{props.alternate ? (
+							<ChevronRight
+								width={18}
+								height={26}
+								className={chevronProps + "order-1 -mr-1"}
+							/>
+						) : (
+							<ChevronLeft
+								width={18}
+								height={26}
+								className={chevronProps + "-ml-1"}
+							/>
+						)}
 						Stack
 					</p>
+
 					{props.project.stack &&
 						props.project.stack.map((stack, i) => (
 							<div
