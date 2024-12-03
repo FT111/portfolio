@@ -2,7 +2,7 @@ export const skills = [
 	{
 		title: "Python",
 		description:
-			" Python is a versatile programming language for writing logic and web APIs. \n\n It has been my go-to backend language for years and the one I have the most experience in.",
+			"A versatile programming language for writing logic and web APIs. \n\n It has been my go-to backend language for years and the one I have the most experience in.",
 		colour: "bg-cyan-700",
 		icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331282/PythonIcon_oh2hs2.png",
 	},
@@ -55,7 +55,7 @@ export const skills = [
 	{
 		title: "TypeScript",
 		description:
-			"TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.",
+			"I have some experience with TypeScript and would like to use it for upcoming projects as it mitigates JavaScript's irritating lack of types.",
 		colour: "bg-sky-700",
 		icon: "https://res.cloudinary.com/db2frz3sv/image/upload/v1726331281/TypeScriptIcon_qtqu0r.png",
 	},
