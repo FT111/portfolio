@@ -57,8 +57,8 @@ export default function Navbar() {
 					<p className={linkClasses}>Projects</p>
 				</Link>
 
-				<Link href="/about">
-					<p className={linkClasses}>About</p>
+				<Link href="https://github.com/FT111">
+					<p className={linkClasses}>Github</p>
 				</Link>
 			</div>
 		</nav>
