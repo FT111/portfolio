@@ -27,7 +27,7 @@
     "react-markdown": "^9.0.1",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "vercel": "^37.4.2"
+    "vercel": "^41.4.1"
   },
   "devDependencies": {
     "@types/node": "^20",
